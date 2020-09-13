@@ -1,0 +1,70 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  color:  #313639;
+  text-align: center;
+  background-color: #F0F8FF;
+}
+
+img{
+  width:100px;
+  height:100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.title, .contOrReset{
+  margin: 4rem auto;
+  background-color:whitesmoke;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+  }
+
+.gamesCompleted{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin:1rem;
+}
+
+.gridOne, .gridTwo{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: 2rem auto;
+}
+
+.gridTwoHeaderDiv{
+display:flex;
+flex-direction: row;
+margin: 0 auto;
+justify-content: center;
+align-items: center;
+}
+
+.animalsLeftToChoose{
+  margin-left: 1rem;
+}
+
+.contOrReset{
+ visibility: hidden;
+ border: none;
+ padding: 1rem 2rem;
+ font-size: larger;
+}
+
+
+
+
+
+
+/* Small (sm) */
+@media (max-width: 640px) { 
+  .gridOne{
+    width: 90%;
+  }
+}
