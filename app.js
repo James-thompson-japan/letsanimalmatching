@@ -6,6 +6,7 @@ const animalsToChoose = document.querySelector(".animalsToChoose")
 const animalsLeftToChoose = document.querySelector(".animalsLeftToChoose")
 const contOrReset = document.querySelector(".contOrReset")
 const gridTwoHeaderDiv = document.querySelector(".gridTwoHeaderDiv")
+const gamesTime = document.querySelector(".gamesTime")
 
 let animalsChosen = 0
 let playing = false
@@ -14,6 +15,7 @@ let viewAnimalsChosenArray = []
 let chosenCards = []
 let chosenCardsName = []
 let cardsWon = []
+let time = 0
 
 
 const gamesCompleted = () => {
@@ -78,6 +80,10 @@ const animalsToChooseFrom =
 ]
 
 function animalsToChooseFromFunc () {
+  if(localStorage.getItem('lastTime')){
+    let storedTime = localStorage.getItem('lastTime')
+    gamesTime.innerHTML = `Last game completed in ${Math.floor(storedTime / 60)}分${storedTime%60}秒`
+  }
   for(let i = 0; i < animalsToChooseFrom.length; i++){
     let card = document.createElement('img')
     card.setAttribute('src',animalsToChooseFrom[i].img)
@@ -161,6 +167,7 @@ if(cardsWon.length === animalsChosenArray.length/2){
   let score = JSON.parse(localStorage.getItem('gamesCompleted'))
   score++
   localStorage.setItem('gamesCompleted',JSON.stringify(score))
+  localStorage.setItem('lastTime',time)
 
 }
   chosenCardsName = []
@@ -168,6 +175,10 @@ if(cardsWon.length === animalsChosenArray.length/2){
 }
 
 function gameBoard(){
+  setInterval(() => {
+    time++
+    console.log(time)
+  }, 1000);
   animalsChosenArray.sort(() => Math.random() - 0.5)
   if(contOrReset.textContent === "Start!"){
   gridOne.innerHTML=""

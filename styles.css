@@ -15,20 +15,13 @@ img{
 }
 
 .title, .contOrReset{
-  margin: 4rem auto;
+  margin: 6rem auto;
   background-color:whitesmoke;
   width: fit-content;
   padding: 2rem;
   border-radius: 50px;
   box-shadow: 0 2px 3px rgba(0,0,0,0.15);
   }
-
-.gamesCompleted{
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin:1rem;
-}
 
 .gridOne, .gridTwo{
   justify-content: center;
@@ -55,6 +48,28 @@ align-items: center;
  border: none;
  padding: 1rem 2rem;
  font-size: larger;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin:1rem;
+  text-align: left;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  opacity: 75%;
+  font-size: small;
+}
+
+.gamesCompleted,.gamesTime{
+  text-align: left;
+  background: white;
+  padding: 4px;
+  margin: 2px;
 }
 
 
